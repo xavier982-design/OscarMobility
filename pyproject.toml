@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oscar"
+version = "0.1.0"
+description = "Oscar booking and payment system"
+authors = [{name = "Your Name"}]
+dependencies = [
+    "sqlalchemy",
+    "fastapi",
+    "uvicorn",
+    "kafka-python",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "pytest-cov",
+]
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore:The 'app' shortcut is now deprecated.*:DeprecationWarning",
+]

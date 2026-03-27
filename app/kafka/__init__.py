@@ -1,0 +1,1 @@
+# Kafka module for producer and consumer logic
